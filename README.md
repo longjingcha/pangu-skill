@@ -2,6 +2,8 @@
 
 > 把公开资料蒸馏成一个可对话、可验证、可迭代的 `skill`。
 
+[![hero](assets/hero.gif)](assets/hero.gif)
+
 `pangu-skill` 不是语气模仿器，
 而是一个 **公开人物认知框架蒸馏器 + 对话验证器**。
 
@@ -146,6 +148,8 @@ python scripts/merge_research.py
 
 ```text
 pangu-skill/
+├── assets/
+│   └── hero.gif
 ├── scripts/
 ├── src/pangu_skill/
 ├── examples/
