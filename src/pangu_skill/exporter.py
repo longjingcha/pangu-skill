@@ -8,6 +8,7 @@ import re
 import yaml
 
 from .distill_config import DistillConfig
+from .specs import get_skill_template_sections
 
 
 DEFAULT_TEMPLATE_PATH = Path(__file__).resolve().parents[2] / "SKILL.md"
@@ -251,121 +252,206 @@ def build_skill_markdown(schema: Dict[str, Any]) -> str:
     boundaries = schema.get("boundaries", {}) or {}
     validation = schema.get("validation", {}) or {}
     versioning = schema.get("versioning", {}) or {}
+    dialogue_profile = schema.get("dialogue_profile", {}) or {}
 
+    sections = get_skill_template_sections()
     lines: List[str] = []
-    lines.append(f"# {schema.get('name', '').strip() or 'Unnamed Skill'}")
-    lines.append("")
-    lines.append("## Summary")
-    lines.append("")
-    lines.append(schema.get("summary", "").strip() or "No summary provided.")
-    lines.append("")
-    lines.append("## Source")
-    lines.append("")
-    lines.append(f"- Skill ID: `{schema.get('skill_id', '').strip() or 'unknown'}`")
-    lines.append(f"- Coverage: `{source.get('coverage', 'low')}`")
-    lines.append(f"- Confidence: `{source.get('confidence', 0.0)}`")
-    notes = source.get("notes", "")
-    if notes:
-        lines.append(f"- Notes: {notes}")
-    lines.append("")
-    lines.append("### Materials")
-    lines.append(_bullet_list(source.get("sources", [])))
-    lines.append("")
 
-    section_map = [
-        ("Thinking Model", [
-            ("Core Beliefs", thinking_model.get("core_beliefs", [])),
-            ("Mental Models", thinking_model.get("mental_models", [])),
-            ("Reasoning Style", thinking_model.get("reasoning_style", [])),
-            ("Heuristics", thinking_model.get("heuristics", [])),
-            ("Unknown Handling", thinking_model.get("unknown_handling", [])),
-        ]),
-        ("Decision Rules", [
-            ("Priorities", decision_rules.get("priorities", [])),
-            ("Tradeoffs", decision_rules.get("tradeoffs", [])),
-            ("Constraints", decision_rules.get("constraints", [])),
-            ("Escalation Logic", decision_rules.get("escalation_logic", [])),
-        ]),
-        ("Expression DNA", [
-            ("Tone", expression_dna.get("tone", [])),
-            ("Style Traits", expression_dna.get("style_traits", [])),
-            ("Format Preferences", expression_dna.get("format_preferences", [])),
-            ("Language Patterns", expression_dna.get("language_patterns", [])),
-        ]),
-    ]
-
-    for heading, subsections in section_map:
-        lines.append(f"## {heading}")
+    if "基本信息" in sections:
+        lines.append(f"# {schema.get('name', '').strip() or 'Unnamed Skill'}")
         lines.append("")
-        for subsection, items in subsections:
-            lines.append(f"### {subsection}")
-            lines.append(_bullet_list(items))
-            lines.append("")
+        lines.append("## 基本信息")
+        lines.append("")
+        lines.append(f"- Skill ID: `{schema.get('skill_id', '').strip() or 'unknown'}`")
+        lines.append(f"- 名称: `{schema.get('name', '').strip() or 'Unnamed Skill'}`")
+        lines.append(f"- 版本: `{versioning.get('version', 'v1.0.0')}`")
+        lines.append(f"- 状态: `{versioning.get('status', 'draft')}`")
+        lines.append("")
 
-    lines.append("## Anti-patterns")
-    lines.append("")
-    lines.append(_bullet_list(schema.get("anti_patterns", [])))
-    lines.append("")
+    if "总览" in sections:
+        lines.append("## 总览")
+        lines.append("")
+        lines.append(schema.get("summary", "").strip() or "No summary provided.")
+        lines.append("")
 
-    lines.append("## Boundaries")
-    lines.append("")
-    lines.append("### Scope")
-    lines.append(_bullet_list(boundaries.get("scope", [])))
-    lines.append("")
-    lines.append("### Limitations")
-    lines.append(_bullet_list(boundaries.get("limitations", [])))
-    lines.append("")
-    lines.append("### Non-goals")
-    lines.append(_bullet_list(boundaries.get("non_goals", [])))
-    lines.append("")
+    if "来源信息" in sections:
+        lines.append("## 来源信息")
+        lines.append("")
+        lines.append(f"- 覆盖程度: `{source.get('coverage', 'low')}`")
+        lines.append(f"- 可信度: `{source.get('confidence', 0.0)}`")
+        notes = source.get("notes", "")
+        if notes:
+            lines.append(f"- 说明: {notes}")
+        lines.append("")
+        lines.append("### 材料来源")
+        lines.append(_bullet_list(source.get("sources", [])))
+        lines.append("")
 
-    lines.append("## Validation")
-    lines.append("")
-    lines.append("### Test Questions")
-    lines.append(_bullet_list(validation.get("test_questions", [])))
-    lines.append("")
-    lines.append("### Evaluation Metrics")
-    lines.append(_bullet_list(validation.get("evaluation_metrics", [])))
-    lines.append("")
-    lines.append("### Failure Modes")
-    lines.append(_bullet_list(validation.get("failure_modes", [])))
-    lines.append("")
-    lines.append("### Evidence")
-    evidence = validation.get("evidence", []) or []
-    if evidence:
-        for item in evidence:
-            lines.append(f"- Claim: {item.get('claim', '')}")
-            lines.append(f"  - Support count: {item.get('source_count', 0)}")
-            lines.append(f"  - Confidence: {item.get('confidence', 0.0)}")
-            for support in item.get("support", []):
-                lines.append(f"  - Support: {support}")
-    else:
-        lines.append("- None")
-    lines.append("")
-    lines.append("### Conflicts")
-    conflicts = validation.get("conflicts", []) or []
-    if conflicts:
-        for item in conflicts:
-            lines.append(f"- Topic: {item.get('topic', '')}")
-            lines.append(f"  - Description: {item.get('description', '')}")
-            for evidence_line in item.get("evidence", []):
-                lines.append(f"  - Evidence: {evidence_line}")
-            lines.append(f"  - Resolution: {item.get('resolution', '')}")
-    else:
-        lines.append("- None")
-    lines.append("")
+    if "思维模型" in sections:
+        lines.append("## 思维模型")
+        lines.append("")
+        lines.append("### 核心信念")
+        lines.append(_bullet_list(thinking_model.get("core_beliefs", [])))
+        lines.append("")
+        lines.append("### 常用心智模型")
+        lines.append(_bullet_list(thinking_model.get("mental_models", [])))
+        lines.append("")
+        lines.append("### 推理风格")
+        lines.append(_bullet_list(thinking_model.get("reasoning_style", [])))
+        lines.append("")
+        lines.append("### 启发式")
+        lines.append(_bullet_list(thinking_model.get("heuristics", [])))
+        lines.append("")
+        lines.append("### 不确定性处理")
+        lines.append(_bullet_list(thinking_model.get("unknown_handling", [])))
+        lines.append("")
 
-    lines.append("## Versioning")
-    lines.append("")
-    lines.append(f"- Version: `{versioning.get('version', 'v1.0.0')}`")
-    lines.append(f"- Status: `{versioning.get('status', 'draft')}`")
-    lines.append("")
-    lines.append("### Changelog")
-    lines.append(_bullet_list(versioning.get("changelog", [])))
-    lines.append("")
-    lines.append("### Iteration Notes")
-    lines.append(_bullet_list(versioning.get("iteration_notes", [])))
-    lines.append("")
+    if "决策规则" in sections:
+        lines.append("## 决策规则")
+        lines.append("")
+        lines.append("### 优先级")
+        lines.append(_bullet_list(decision_rules.get("priorities", [])))
+        lines.append("")
+        lines.append("### 取舍逻辑")
+        lines.append(_bullet_list(decision_rules.get("tradeoffs", [])))
+        lines.append("")
+        lines.append("### 约束条件")
+        lines.append(_bullet_list(decision_rules.get("constraints", [])))
+        lines.append("")
+        lines.append("### 升级逻辑")
+        lines.append(_bullet_list(decision_rules.get("escalation_logic", [])))
+        lines.append("")
+
+    if "表达 DNA" in sections:
+        lines.append("## 表达 DNA")
+        lines.append("")
+        lines.append("### 语气")
+        lines.append(_bullet_list(expression_dna.get("tone", [])))
+        lines.append("")
+        lines.append("### 风格特征")
+        lines.append(_bullet_list(expression_dna.get("style_traits", [])))
+        lines.append("")
+        lines.append("### 排版偏好")
+        lines.append(_bullet_list(expression_dna.get("format_preferences", [])))
+        lines.append("")
+        lines.append("### 语言习惯")
+        lines.append(_bullet_list(expression_dna.get("language_patterns", [])))
+        lines.append("")
+
+    if "对话 Profile" in sections:
+        lines.append("## 对话 Profile")
+        lines.append("")
+        lines.append("### 人格摘要")
+        lines.append(dialogue_profile.get("persona_summary", "No persona summary provided."))
+        lines.append("")
+        lines.append("### 默认语气")
+        lines.append(_bullet_list(dialogue_profile.get("default_tone", [])))
+        lines.append("")
+        lines.append("### 回复原则")
+        lines.append(_bullet_list(dialogue_profile.get("response_principles", [])))
+        lines.append("")
+        lines.append("### 回答策略")
+        lines.append(_bullet_list(dialogue_profile.get("answering_strategy", [])))
+        lines.append("")
+        lines.append("### 追问策略")
+        lines.append(_bullet_list(dialogue_profile.get("questioning_strategy", [])))
+        lines.append("")
+        lines.append("### 不确定性处理")
+        lines.append(_bullet_list(dialogue_profile.get("uncertainty_handling", [])))
+        lines.append("")
+        lines.append("### 拒绝方式")
+        lines.append(_bullet_list(dialogue_profile.get("refusal_style", [])))
+        lines.append("")
+        lines.append("### 输出模板")
+        lines.append(_bullet_list(dialogue_profile.get("output_templates", [])))
+        lines.append("")
+        lines.append("### 切换规则")
+        lines.append(_bullet_list(dialogue_profile.get("switching_rules", [])))
+        lines.append("")
+        lines.append("### 示例问题")
+        lines.append(_bullet_list(dialogue_profile.get("example_prompts", [])))
+        lines.append("")
+        lines.append("### 示例回答")
+        lines.append(_bullet_list(dialogue_profile.get("example_responses", [])))
+        lines.append("")
+
+    if "反模式" in sections:
+        lines.append("## 反模式")
+        lines.append("")
+        lines.append(_bullet_list(schema.get("anti_patterns", [])))
+        lines.append("")
+
+    if "边界" in sections:
+        lines.append("## 边界")
+        lines.append("")
+        lines.append("### 适用范围")
+        lines.append(_bullet_list(boundaries.get("scope", [])))
+        lines.append("")
+        lines.append("### 限制")
+        lines.append(_bullet_list(boundaries.get("limitations", [])))
+        lines.append("")
+        lines.append("### 非目标")
+        lines.append(_bullet_list(boundaries.get("non_goals", [])))
+        lines.append("")
+
+    if "验证" in sections:
+        lines.append("## 验证")
+        lines.append("")
+        lines.append("### 测试问题")
+        lines.append(_bullet_list(validation.get("test_questions", [])))
+        lines.append("")
+        lines.append("### 评估指标")
+        lines.append(_bullet_list(validation.get("evaluation_metrics", [])))
+        lines.append("")
+        lines.append("### 失败模式")
+        lines.append(_bullet_list(validation.get("failure_modes", [])))
+        lines.append("")
+        lines.append("### 证据")
+        evidence = validation.get("evidence", []) or []
+        if evidence:
+            for item in evidence:
+                lines.append(f"- Claim: {item.get('claim', '')}")
+                lines.append(f"  - Support count: {item.get('source_count', 0)}")
+                lines.append(f"  - Confidence: {item.get('confidence', 0.0)}")
+                for support in item.get("support", []):
+                    lines.append(f"  - Support: {support}")
+        else:
+            lines.append("- None")
+        lines.append("")
+        lines.append("### 冲突")
+        conflicts = validation.get("conflicts", []) or []
+        if conflicts:
+            for item in conflicts:
+                lines.append(f"- Topic: {item.get('topic', '')}")
+                lines.append(f"  - Description: {item.get('description', '')}")
+                for evidence_line in item.get("evidence", []):
+                    lines.append(f"  - Evidence: {evidence_line}")
+                lines.append(f"  - Resolution: {item.get('resolution', '')}")
+        else:
+            lines.append("- None")
+        lines.append("")
+
+    if "版本管理" in sections:
+        lines.append("## 版本管理")
+        lines.append("")
+        lines.append(f"- 版本: `{versioning.get('version', 'v1.0.0')}`")
+        lines.append(f"- 状态: `{versioning.get('status', 'draft')}`")
+        lines.append("")
+        lines.append("### 更新日志")
+        lines.append(_bullet_list(versioning.get("changelog", [])))
+        lines.append("")
+        lines.append("### 迭代说明")
+        lines.append(_bullet_list(versioning.get("iteration_notes", [])))
+        lines.append("")
+
+    if "使用说明" in sections:
+        lines.append("## 使用说明")
+        lines.append("")
+        lines.append("- 在对话里直接调用")
+        lines.append("- 作为 prompt 前缀使用")
+        lines.append("- 作为 agent runtime 的 skill 加载")
+        lines.append("- 作为参考资料手动粘贴")
+        lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 
@@ -374,4 +460,28 @@ def save_skill_markdown(schema: Dict[str, Any], output_path: str | Path) -> Path
     target = Path(output_path)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(build_skill_markdown(schema), encoding="utf-8")
+    return target
+
+
+def render_prompt_pack(schema: Dict[str, Any]) -> str:
+    sections = [
+        f"Skill ID: {schema.get('skill_id', 'unknown')}",
+        f"Name: {schema.get('name', 'Unnamed Skill')}",
+        f"Summary: {schema.get('summary', '')}",
+        "",
+        "## Core Guidance",
+        "- Follow the dialogue profile first.",
+        "- Be explicit about uncertainty.",
+        "- Keep the response structured.",
+        "",
+        "## Answer Template",
+        _bullet_list((schema.get('dialogue_profile', {}) or {}).get('output_templates', []) or ['结论 → 原因 → 风险 → 需要补充的信息']),
+    ]
+    return "\n".join(sections).rstrip() + "\n"
+
+
+def save_prompt_pack(schema: Dict[str, Any], output_path: str | Path) -> Path:
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(render_prompt_pack(schema), encoding="utf-8")
     return target

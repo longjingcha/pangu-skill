@@ -1,0 +1,72 @@
+[
+  {
+    "title": "乔布斯 公开资料示例 1",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/1",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 1",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 2",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/2",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 2",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 3",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/3",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 3",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 4",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/4",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 4",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 5",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/5",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 5",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 6",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/6",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 6",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 7",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/7",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 7",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 8",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/8",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 8",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 9",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/9",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 9",
+    "type": "web",
+    "source": "fallback"
+  },
+  {
+    "title": "乔布斯 公开资料示例 10",
+    "url": "https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/10",
+    "snippet": "用于在网络不可用时保持流水线可运行的占位结果 10",
+    "type": "web",
+    "source": "fallback"
+  }
+]

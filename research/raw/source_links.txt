@@ -1,0 +1,10 @@
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/1
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/2
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/3
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/4
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/5
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/6
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/7
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/8
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/9
+https://example.com/%E4%B9%94%E5%B8%83%E6%96%AF/10
