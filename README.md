@@ -1,70 +1,153 @@
 # pangu-skill
 
-> 把公开资料蒸馏成一个可对话、可验证、可迭代的 `skill`。
-
 [![hero](assets/hero.gif)](assets/hero.gif)
 
-`pangu-skill` 不是语气模仿器，
+> 你想蒸馏的下一个人，何必只是同事。
+
+`pangu-skill` 把公开资料蒸馏成可对话、可验证、可迭代的 `skill`。
+
+它不是语气模仿器，
 而是一个 **公开人物认知框架蒸馏器 + 对话验证器**。
 
-它把一个人的：
+它提取的不是“他说了什么”，
+而是：
 
-- 认知框架
-- 判断方式
-- 追问方式
-- 重构问题的方式
-- 边界意识
-
-蒸馏成一个可以反复对话、反复修正、逐步逼近的 skill。
-
----
-
-## 一句话看懂它
-
-**不是复读语录，而是提取“怎么想”。**
-
-你输入一个名字，`pangu-skill` 帮你把公开资料整理成一个能运行的 skill；
-你再用这个 skill 去对话，检验它是否真的像这个人。
+- 怎么想
+- 怎么判断
+- 怎么追问
+- 怎么重构问题
+- 什么不做
+- 边界在哪
 
 ---
 
-## 它能做什么
+## 它到底在做什么
 
-- 蒸馏乔布斯 / Naval / 马斯克 / 其他人物的公开思维模式
-- 生成可运行的 `skill_schema.yaml`
-- 导出 `SKILL.md` 和 `prompt_pack.md`
-- 用 skill 对话，验证它是否真的像
-- 根据对话结果继续修正蒸馏
+输入一个名字，`pangu-skill` 帮你把公开资料整理成一个能运行的 skill；
+你再用这个 skill 去对话，看看它到底像不像。
+
+不是复读语录，
+而是提取认知操作系统。
 
 ---
 
-## 核心闭环
+## 安装
 
-```text
-公开资料
-→ 蒸馏成 skill
-→ 用 skill 对话
-→ 发现偏差
-→ 修正蒸馏
-→ 再对话
+`pangu-skill` 基于开放的 Agent Skills 协议，可在 skills-compatible 的 AI agent runtime 中运行。
+
+### 一行命令（推荐）
+
+告诉你的 agent：
+
+> 帮我安装这个 skill：https://github.com/your-org/pangu-skill
+
+或者直接下载仓库后安装：
+
+```bash
+git clone https://github.com/your-org/pangu-skill
+cd pangu-skill
+python scripts/install_skill.py --target cursor
 ```
 
-这就是 `pangu-skill` 的产品核心。
+### 通用安装器
+
+```bash
+npx skills add your-org/pangu-skill
+```
+
+### 手动安装
+
+```bash
+python scripts/install_skill.py --list-targets
+python scripts/install_skill.py --target cursor --source .
+```
+
+### 作为参考资料使用
+
+即使 runtime 不支持自动加载，你也可以直接把 `SKILL.md` 粘贴进对话。
 
 ---
 
-## 为什么它有用
+## 效果示例
 
-因为真正“像”的回答，不在句式，
-而在它是否真的进入了那个人的思考方式：
+你希望它回答得像这样：
 
-- 这是不是一个值得做的问题？
-- 这是不是一个品味问题？
-- 这是不是一个取舍问题？
-- 这是不是一个杠杆问题？
-- 这是不是一个最短路径问题？
+- 先质疑问题前提
+- 再把问题重构成更本质的版本
+- 再给出清晰判断
+- 最后压缩成一句锋利的话
 
-`pangu-skill` 蒸馏的就是这些 **思考动作**。
+### 乔布斯示例
+
+> OpenAI 和 Anthropic 谁的方向是对的？
+
+理想回答不是中性分析，而是：
+
+- 质疑“方向对”这个前提
+- 把问题改写成“品味与聚焦的竞赛”
+- 用“作品”而不是“公司”来判断
+- 给出锋利但有层次的结论
+
+---
+
+## 工作原理
+
+输入一个名字后，`pangu-skill` 做四件事：
+
+1. **六路并行采集**
+   - YouTube / B站 / 抖音字幕
+   - 维基百科
+   - 公开网页
+   - 公开访谈稿
+   - 批评者视角
+   - 时间线与决策记录
+
+2. **三重验证提炼**
+   - 一个观点要跨多个来源反复出现
+   - 能推断新问题下的立场
+   - 不是所有聪明人都会有的独特判断
+
+3. **构建 Skill**
+   - 3-7 个心智模型
+   - 5-10 条决策启发式
+   - 表达 DNA
+   - 价值观与反模式
+   - 诚实边界
+
+4. **质量验证**
+   - 用 3 个公开回答过的问题测试一致性
+   - 再用 1 个没讨论过的问题测试不确定性
+   - 不像就回去修正蒸馏
+
+完整方法论在 `references/extraction-framework.md`。
+
+---
+
+## 快速开始
+
+### 自动蒸馏
+
+```bash
+python -m pangu_skill --say "帮我蒸馏一个乔布斯 skill" --auto
+```
+
+### 手动蒸馏
+
+```bash
+python -m pangu_skill distill --query "乔布斯" --input-dir research/merged
+```
+
+### 进入对话
+
+```bash
+python -m pangu_skill chat --schema generated/distilled_skill.yaml
+```
+
+### 质量检查
+
+```bash
+python -m pangu_skill quality --schema generated/distilled_skill.yaml
+```
 
 ---
 
@@ -81,34 +164,6 @@
 - 对话反哺修正
 
 先跑通，再变强。
-
----
-
-## 快速开始
-
-### 1. 自动蒸馏
-
-```bash
-python -m pangu_skill --say "帮我蒸馏一个乔布斯 skill" --auto
-```
-
-### 2. 手动蒸馏
-
-```bash
-python -m pangu_skill distill --query "乔布斯" --input-dir research/merged
-```
-
-### 3. 进入对话
-
-```bash
-python -m pangu_skill chat --schema generated/distilled_skill.yaml
-```
-
-### 4. 质量检查
-
-```bash
-python -m pangu_skill quality --schema generated/distilled_skill.yaml
-```
 
 ---
 
@@ -156,37 +211,6 @@ pangu-skill/
 ├── research/
 └── generated/
 ```
-
----
-
-## 对话风格目标
-
-你希望它回答得像这样：
-
-- 先质疑问题前提
-- 再把问题重构成更本质的版本
-- 再给出清晰判断
-- 最后用这个人物的方式压缩成一句锋利的话
-
-不是“回答像谁”，
-而是“想问题像谁”。
-
----
-
-## 乔布斯示例目标
-
-例如：
-
-> OpenAI 和 Anthropic 谁的方向是对的？
-
-理想回答不是中性分析，而是：
-
-- 质疑“方向对”这个前提
-- 把问题改写成“品味与聚焦的竞赛”
-- 用“作品”而不是“公司”来判断
-- 给出锋利但有层次的结论
-
-这就是 `pangu-skill` 想逼近的效果。
 
 ---
 
