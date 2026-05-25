@@ -4,7 +4,7 @@ summary_sentence_index: 0
 coverage_threshold: 3
 confidence_low: 0.45
 confidence_medium: 0.65
-confidence_high: 0.82
+confidence_high: 0.8
 stopwords:
   - the
   - and
@@ -13,17 +13,5 @@ stopwords:
   - that
   - this
   - from
-  - you
-  - are
-  - was
-  - were
-  - have
-  - has
-  - had
-  - not
-  - but
-  - can
-  - will
-  - would
   - should
-  - could
+  - during

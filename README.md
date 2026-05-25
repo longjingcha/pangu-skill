@@ -7,8 +7,8 @@
 ```text
 pangu-skill/
 ├── README.md
+├── pyproject.toml
 ├── requirements.txt
-├── main.py
 ├── SKILL.md
 ├── skill_schema.yaml
 ├── distill_config.yaml
@@ -21,6 +21,8 @@ pangu-skill/
 └── src/
     └── pangu_skill/
         ├── __init__.py
+        ├── __main__.py
+        ├── cli.py
         ├── distill_config.py
         └── exporter.py
 ```
@@ -36,24 +38,34 @@ pangu-skill/
 - 将结构化结果导出为可直接使用的 `SKILL.md`
 - 通过验证、反馈与版本化机制持续演化 skill
 
-## 命令行工具
+## 安装与运行
 
-### 验证 schema
+### 安装依赖
 
 ```bash
-python main.py validate --schema examples/example_skill.yaml
+pip install -r requirements.txt
 ```
 
-### 导出 skill 文档
+### 包入口运行
 
 ```bash
-python main.py export --schema examples/example_skill.yaml --output generated/SKILL.md
+python -m pangu_skill validate --schema examples/example_skill.yaml
+python -m pangu_skill export --schema examples/example_skill.yaml --output generated/SKILL.md
+```
+
+### 通过项目命令运行
+
+安装后可直接使用：
+
+```bash
+pangu-skill validate --schema examples/example_skill.yaml
+pangu-skill export --schema examples/example_skill.yaml --output generated/SKILL.md
 ```
 
 ### 蒸馏原始材料
 
 ```bash
-python main.py distill \
+pangu-skill distill \
   --input examples/raw_material_1.txt examples/raw_material_2.txt \
   --schema-output generated/distilled_skill.yaml \
   --markdown-output generated/SKILL.md \
@@ -64,28 +76,18 @@ python main.py distill \
 
 ## 蒸馏器 v3
 
-当前蒸馏器已经支持：
+当前蒸馏器已经具备：
 
-- `distill_config.yaml` 配置化调参
-- 多材料对比与主题聚合
-- 冲突检测（例如速度 vs 清晰度）
-- `validation.evidence` 证据结构化
-- `validation.conflicts` 冲突结构化
-- 自动生成更稳健的 `thinking_model`、`decision_rules` 和 `boundaries`
+- 可配置的分词、停用词和阈值
+- 多材料对比与高频主题提取
+- 冲突检测
+- 结构化 evidence 输出
+- 版本化输出
 
-## 测试
+### Validation 结构新增
 
-项目提供了基础测试，覆盖：
-
-- 蒸馏结果是否包含 `evidence` / `conflicts`
-- schema 校验是否通过
-- YAML 与 Markdown 输出是否可写入磁盘
-
-运行测试：
-
-```bash
-python -m unittest discover -s tests
-```
+- `validation.evidence`：每个主题的支持材料、来源数和置信度
+- `validation.conflicts`：主题冲突、冲突证据和建议解释方式
 
 ## 核心理念
 
@@ -153,6 +155,8 @@ validation:
   test_questions: []
   evaluation_metrics: []
   failure_modes: []
+  evidence: []
+  conflicts: []
 
 versioning:
   version: "v1.0.0"
@@ -160,18 +164,6 @@ versioning:
   changelog: []
   iteration_notes: []
 ```
-
-### 最小可用字段
-
-如果先做 MVP，建议只保留以下 7 项：
-
-- `skill_id`
-- `name`
-- `summary`
-- `thinking_model`
-- `decision_rules`
-- `boundaries`
-- `validation`
 
 ## 蒸馏工作流 v1
 
