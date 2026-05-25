@@ -39,12 +39,12 @@
 
 告诉你的 agent：
 
-> 帮我安装这个 skill：https://github.com/your-org/pangu-skill
+> 帮我安装这个 skill：https://github.com/longjingcha/pangu-skill
 
 或者直接下载仓库后安装：
 
 ```bash
-git clone https://github.com/your-org/pangu-skill
+git clone https://github.com/longjingcha/pangu-skill
 cd pangu-skill
 python scripts/install_skill.py --target cursor
 ```
@@ -52,7 +52,7 @@ python scripts/install_skill.py --target cursor
 ### 通用安装器
 
 ```bash
-npx skills add your-org/pangu-skill
+npx skills add longjingcha/pangu-skill
 ```
 
 ### 手动安装
