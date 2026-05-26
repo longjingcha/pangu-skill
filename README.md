@@ -2,8 +2,11 @@
 
 # 盘古.skill
 
-  
-动画由 [huashu-design](https://github.com/longjingcha/pangu-design) skill 制作
+<p align="center">
+  <img src="assets/hero.gif" alt="pangu-skill Hero Animation" />
+  <br/>
+  <sub>动画由 <a href="https://github.com/alchaincyf/huashu-design">huashu-design</a> skill 制作</sub>
+</p>  
 
 > *「你想构建的下一个协议，何必是同事、人类」*
 
