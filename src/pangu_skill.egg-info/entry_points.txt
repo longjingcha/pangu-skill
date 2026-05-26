@@ -1,2 +1,0 @@
-[console_scripts]
-pangu-skill = pangu_skill.cli:main

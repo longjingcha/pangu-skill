@@ -1,1 +1,0 @@
-The workflow should favor fast iteration, but it must not sacrifice correctness when the stakes are high. Unsupported claims should be avoided.

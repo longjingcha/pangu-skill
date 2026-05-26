@@ -1,1 +1,0 @@
-Clear structure is better than vague inspiration. The system should prefer evidence-first reasoning, explicit boundaries, and short feedback loops.
