@@ -8,7 +8,7 @@
   <sub>动画由 <a href="https://github.com/longjingcha/pangu-design">pangu-design</a> skill 制作</sub>
 </p>
 
-> *「你想构建的下一个协议，何必是同事」*
+> *「你想构建的下一个协议，何必是同事、人类」*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
@@ -24,6 +24,7 @@
 <br>
 
 [同事.skill](https://github.com/titanwings/colleague-skill) 证明了“把一个人做成可调用对象”是可行的。<br>
+[女娲.skill](https://github.com/alchaincyf/nuwa-skill) 证明了“女娲不复制人。它提取认知操作系统”
 盘古要做的更进一步：它不只处理某个人，也能处理一个专业领域的知识协议、路径与规则。<br>
 只需输入一个名字、一个领域，或者一个模糊目标，盘古就会自动完成生成流程，并在必要时触发开天能力。
 
@@ -46,28 +47,19 @@
 ## 效果示例
 
 ```
-用户      ❯ 我同时想做自媒体、写书、做独立开发，精力完全不够
+用户      ❯ 用张小龙的视角帮我想想：我的 App 想加一个‘签到’功能，该不该做？
 
-Naval     ❯ 你列了三个欲望。每个欲望都是你跟不快乐签的一份合同。
-            不是精力不够，是合同太多。
-            
-            问你自己：哪一个做起来你会忘记时间？
-            那个就是你的特定知识所在。
-            
-            不是三选一。是先一，再一，再一。
-            串行复利，不是并行内耗。
-```
+张小龙     ❯ 如果你的 App 不是高频核心场景，签到 功能大概率不该做。
+这个“签到”到底是在帮用户完成什么任务？
 
-```
-用户      ❯ 我们的SaaS产品获客成本太高了
+如果答案只是：
 
-马斯克     ❯ 先别想怎么降。先算物理极限。
-            获客的最小必要动作是什么？用户从知道你到付费，
-            信息传递的理论最短路径是什么？
-            
-            现在你的实际路径是理论路径的几倍？
-            如果超过3倍，中间一定有可以砍掉的步骤。
-            不是优化漏斗，是质疑漏斗本身该不该存在。
+提升活跃
+做留存数据
+给运营一个抓手
+让产品看起来“有互动”
+那它通常不是用户需求，而是团队需求。
+
 ```
 
 再来一个专业领域的例子：
@@ -84,42 +76,10 @@ Naval     ❯ 你列了三个欲望。每个欲望都是你跟不快乐签的一
             你不是缺内容，你缺的是一张增长知识地图。
 ```
 
-再来一个大家更熟悉的。处理乔布斯协议之后，问他「OpenAI和Anthropic谁的方向对」：
-
-```
-用户      ❯ OpenAI和Anthropic谁的方向是对的？
-
-乔布斯    ❯ 你问错了。这不是一场关于方向的竞赛。
-            这是一场关于品味的竞赛。
-
-            OpenAI像1985年的微软。什么都做，什么都要赢。
-            这种策略能赢市场份额。Bill Gates就是这么赢的。
-            问题是——当你什么都做的时候，你不可能每件事都做到
-            insanely great。
-
-            Anthropic更像早期的Apple。聚焦。
-            Focus means saying no to a hundred good ideas.
-
-            但两家公司都犯了一个我绝对不会犯的错误——
-            他们不控制硬件。
-
-            最终赢的可能是同时控制芯片、模型和用户界面的人。
-            你知道现在谁在同时做这三件事吗？Apple.
-```
-
 这不是角色扮演。乔布斯用的是「聚焦即说不」和「端到端控制」模型，Naval用的是「欲望即合同」，马斯克用的是「渐近极限法」。**它们不是在复读名人语录，而是在用稳定模型帮你分析。**
 
 ---
 
-## 不想自己构建？试试 Bloome
-
-[<img src="bloome-advisors.jpg" alt="Bloome - 让他们成为你的智囊团" width="720">](https://www.bloome.im)
-
-想随时找乔布斯和张小龙聊产品？和芒格聊投资？
-
-[Bloome](https://www.bloome.im) —— 让他们成为你的智囊团，人和多个 Agent 在同一个对话里协作。www.bloome.im
-
----
 
 ## 安装
 
@@ -161,10 +121,6 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 </details>
 
-### 方式三：作为参考资料使用
-
-即使 runtime 不支持 Agent Skills 自动加载，你也可以直接把 `SKILL.md` 的内容粘贴进对话——它本质就是一份 markdown + YAML frontmatter。
-
 ---
 
 ### 使用
@@ -181,8 +137,7 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 ```
 > 用芒格的视角帮我分析这个投资决策
-> 费曼会怎么解释量子计算？
-> 切换到Naval，我在纠结三件事
+> 用张小龙的视角帮我想想：我的 App 想加一个‘签到’功能，该不该做
 ```
 
 再来一个专业领域的例子：
@@ -242,17 +197,6 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 | 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
 |------|------|---------|---------|
 | 🔥 **Paul Graham** | 创业/写作/产品/人生哲学 | [paul-graham-skill](https://github.com/longjingcha/paul-graham-skill) | `npx skills add longjingcha/paul-graham-skill` |
-| 🔥 **张一鸣** | 产品/组织/全球化/人才 | [zhang-yiming-skill](https://github.com/longjingcha/zhang-yiming-skill) | `npx skills add alchaincyf/zhang-yiming-skill` |
-| 🔥 **Karpathy** | AI/工程/教育/开源 | [karpathy-skill](https://github.com/alchaincyf/karpathy-skill) | `npx skills add alchaincyf/karpathy-skill` |
-| 🔥 **Ilya Sutskever** | AI安全/scaling/研究品味 | [ilya-sutskever-skill](https://github.com/alchaincyf/ilya-sutskever-skill) | `npx skills add alchaincyf/ilya-sutskever-skill` |
-| 🔥 **MrBeast** | 内容创造/YouTube方法论 | [mrbeast-skill](https://github.com/alchaincyf/mrbeast-skill) | `npx skills add alchaincyf/mrbeast-skill` |
-| 🔥 **特朗普** | 谈判/权力/传播/行为预判 | [trump-skill](https://github.com/alchaincyf/trump-skill) | `npx skills add alchaincyf/trump-skill` |
-| ⭐ **乔布斯** | 产品/设计/战略 | [steve-jobs-skill](https://github.com/alchaincyf/steve-jobs-skill) | `npx skills add alchaincyf/steve-jobs-skill` |
-| **马斯克** | 工程/成本/第一性原理 | [elon-musk-skill](https://github.com/alchaincyf/elon-musk-skill) | `npx skills add alchaincyf/elon-musk-skill` |
-| **芒格** | 投资/多元思维/逆向思考 | [munger-skill](https://github.com/alchaincyf/munger-skill) | `npx skills add alchaincyf/munger-skill` |
-| **费曼** | 学习/教学/科学思维 | [feynman-skill](https://github.com/alchaincyf/feynman-skill) | `npx skills add alchaincyf/feynman-skill` |
-| **纳瓦尔** | 财富/杠杆/人生哲学 | [naval-skill](https://github.com/alchaincyf/naval-skill) | `npx skills add alchaincyf/naval-skill` |
-| **塔勒布** | 风险/反脆弱/不确定性 | [taleb-skill](https://github.com/alchaincyf/taleb-skill) | `npx skills add alchaincyf/taleb-skill` |
 
 ### 主题Skill
 
@@ -265,27 +209,6 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 想处理不在列表里的人或主题？安装盘古，说「构建一个XXX协议」就行。
 
 ---
-
-## 达尔文.skill：让所有Skill持续进化
-
-<div align="center">
-
-<a href="https://github.com/alchaincyf/darwin-skill">
-<img src="https://raw.githubusercontent.com/alchaincyf/darwin-skill/master/assets/banner.svg" alt="达尔文.skill" width="600">
-</a>
-
-</div>
-
-盘古造Skill，**[达尔文](https://github.com/alchaincyf/darwin-skill)** 让Skill进化。
-
-受 Karpathy autoresearch 启发，达尔文.skill 用自主实验循环批量优化所有Skill：8维度评估、棘轮机制（只保留改进，自动回滚退步）、独立子agent评分。盘古的 Phase 5 双Agent精炼也可以复用这套评估体系，但不把它当成唯一答案；当评估结果说明结构有问题时，优先重写结构，而不是继续微调。
-
-```bash
-npx skills add alchaincyf/darwin-skill
-```
-
----
-
 ## 工作原理
 
 输入一个名字后，盘古做四件事：
@@ -310,20 +233,9 @@ pangu-skill/
 ├── references/
 │   ├── extraction-framework.md   # 提炼方法论（想深入了解看这个）
 │   └── skill-template.md         # 生成Skill的模板
-└── examples/                          # 13个人物 + 1个主题，含完整调研数据
+└── examples/                          # 正在构建
     ├── steve-jobs-perspective/        # ⭐ 乔布斯（含实战对话记录）
     ├── paul-graham-perspective/       # Paul Graham
-    ├── zhang-yiming-perspective/      # 张一鸣
-    ├── andrej-karpathy-perspective/   # Karpathy
-    ├── ilya-sutskever-perspective/    # Ilya Sutskever
-    ├── trump-perspective/             # 特朗普
-    ├── mrbeast-perspective/           # MrBeast
-    ├── elon-musk-perspective/         # 马斯克
-    ├── munger-perspective/            # 查理·芒格
-    ├── feynman-perspective/           # 费曼
-    ├── naval-perspective/             # Naval Ravikant
-    ├── taleb-perspective/             # 塔勒布
-    └── x-mastery-mentor/             # X导师（主题Skill）
 ```
 
 调研过程全透明。每个example都包含完整的调研文件，你可以看到信息怎么被收集、筛选、变成心智模型。乔布斯的示例还附带了一段完整的实战对话记录（聊AI硬件、OpenAI vs Anthropic、Apple破局），展示Skill在多轮深度对话中的表现。
@@ -340,6 +252,9 @@ pangu-skill/
 
 我之前就一直在做类似的事，但构建的不是同事，而是芒格、费曼、Naval、马斯克、塔勒布这些协议。今天把方法论开源了。
 
+
+[女娲.skill](https://github.com/alchaincyf/nuwa-skill) 女娲不复制人。它提取认知操作系统。
+
 盘古不复制人。它抽取认知协议，也抽取专业领域的知识协议。
 
 **盘古（Pangu）**，中国神话里开天辟地的巨人。这里的泥土是公开信息，造出来的不是人，是一面镜子。
@@ -348,18 +263,13 @@ pangu-skill/
 
 ## 关于作者
 
-**花叔** — AI Native Coder，独立开发者，代表作：小猫补光灯（AppStore 付费榜 Top1）
-
-| 平台 | 链接 |
-|------|------|
-| 🌐 官网 | [bookai.top](https://bookai.top) · [huasheng.ai](https://www.huasheng.ai) |
-| 𝕏 Twitter | [@AlchainHust](https://x.com/AlchainHust) |
-| 📺 B站 | [花叔](https://space.bilibili.com/14097567) |
-| ▶️ YouTube | [@Alchain](https://www.youtube.com/@Alchain) |
-| 📕 小红书 | [花叔](https://www.xiaohongshu.com/user/profile/5abc6f17e8ac2b109179dfdf) |
-| 💬 公众号 | 微信搜「花叔」或扫码关注 ↓ |
-
-<img src="wechat-qrcode.jpg" alt="公众号二维码" width="360">
+**查老师并不渣** — 一人公司OPC（独立开发者） | 副业赚钱 | AI自动化编程网站 www.lscript.cn
+| | |
+|:---|:---|
+| 🌐 官网 | [www.lscript.cn](http://www.lscript.cn)|
+| 📺 B站 | [查老师并不渣](https://space.bilibili.com/642180359?spm_id_from=333.337.0.0) |
+| 📕 小红书 | [查老师并不渣](https://www.xiaohongshu.com/user/profile/67698a55000000001802adbc) |
+| 💬 公众号 | 微信搜「查哥聊AI」 |
 
 ## 许可证
 
@@ -369,32 +279,14 @@ MIT — 随便用，随便改，随便造。
 
 <div align="center">
 
-**同事.skill** 构建了人做什么。<br>
+**女娲.skill**  女娲不复制人。它提取认知操作系统。<br>
 **盘古** 抽取了人怎么想。<br><br>
-*你想构建的下一个协议，何必是同事。*
+*你想构建的下一个协议，何必是人类。*
 
 <br>
 
-MIT License © [花叔](https://github.com/longjingcha)
+MIT License © [查老师并不渣](https://github.com/longjingcha)
 
 </div>
 
 ---
-
-## English
-
-> *"The next person you want to distill doesn't have to be a colleague."*
-
-**[colleague-skill](https://github.com/titanwings/colleague-skill)** proved that distilling a person into an AI skill is viable. **Pangu** asks: why stop at colleagues? Distill the best minds in every field — Munger, Feynman, Musk, Naval — people who conveniently left mountains of distillable material behind.
-
-Pangu is an [Agent Skill](https://agentskills.io) that extracts cognitive structures — mental models, decision heuristics, expression DNA — from any public figure into a runnable perspective skill. It also challenges weak premises, rewrites bad questions, and allows the workflow to break template habits when the problem demands it. Works in Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode, and 50+ skills-compatible runtimes.
-
-Not role-playing. Cognitive architecture extraction.
-
-**Install** (cross-runtime, auto-detects your agent): `npx skills add alchaincyf/pangu-skill`
-
-**How it works**: Input a name → 6 parallel research agents → 40+ primary sources → triple-verified mental models → quality-validated SKILL.md
-
-**13 person skills + 1 topic skill included** — all with full research data. The Jobs example includes a complete multi-turn conversation demo.
-
-See the Chinese README above for live examples and methodology.
