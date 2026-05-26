@@ -1,4 +1,4 @@
-
+<div align="center">
 
 # 盘古.skill
 
@@ -374,3 +374,4 @@ MIT License © [查老师并不渣](https://github.com/longjingcha)
 
 ---
 
+</div>
