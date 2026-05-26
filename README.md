@@ -47,6 +47,7 @@
 [Star History Chart](https://star-history.com/#longjingcha/pangu-skill&Date)
 
 
+</div>
 
 ---
 
@@ -374,4 +375,3 @@ MIT License © [查老师并不渣](https://github.com/longjingcha)
 
 ---
 
-</div>
