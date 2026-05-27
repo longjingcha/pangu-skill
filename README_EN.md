@@ -39,50 +39,6 @@ Pangu is the upgrade path when you want more than imitation.
 
 ---
 
-## What Pangu provides
-
-Pangu provides a full protocol production chain, not just a one-off answer.
-
-### 1. Person Protocol
-For public figures, founders, creators, and thinkers.
-
-It captures:
-- mental models
-- decision heuristics
-- expression rules
-- values and anti-patterns
-- honesty boundaries
-
-### 2. Domain Protocol
-For fields, methodologies, themes, and frameworks.
-
-It captures:
-- scope
-- core map
-- criteria
-- path
-- pitfalls and counterexamples
-- failure modes
-- schools of thought
-- decision actions
-
-### 3. Open-the-sky capability
-When the question itself is broken, Pangu rewrites it before trying to answer.
-
-### 4. Diagnoser and auditor tools
-- `pangu_protocol_diagnoser` finds protocol gaps and open-the-sky signals
-- `pangu_protocol_auditor` checks whether the output is ready to ship
-- `pangu_subtitle_fetcher` and `pangu_transcript_cleaner` provide the raw source pipeline
-
-### 5. End-to-end input pipeline
-From subtitles and transcripts to source specs, extraction frameworks, templates, and auditing, Pangu is a system for continuously producing protocols.
-
----
-
-## What Pangu produces
-
----
-
 ## Core workflow
 
 Pangu does four things after you give it a name, topic, or vague need — but unlike `nuwa-skill`, this is not a pure distillation pipeline.
@@ -153,6 +109,7 @@ When the question itself is broken, Pangu rewrites it before trying to answer.
 - `pangu_protocol_diagnoser` finds protocol gaps and open-the-sky signals
 - `pangu_protocol_auditor` checks whether the output is ready to ship
 - `pangu_subtitle_fetcher` and `pangu_transcript_cleaner` provide the raw source pipeline
+- source names are standardized as `pangu-writings.md`, `pangu-dialogues.md`, `pangu-expression.md`, `pangu-commentary.md`, `pangu-decisions.md`, and `pangu-timeline.md`
 
 ### 5. End-to-end input pipeline
 From subtitles and transcripts to source specs, extraction frameworks, templates, and auditing, Pangu is a system for continuously producing protocols.
@@ -169,6 +126,7 @@ Pangu treats sources as a traceable pipeline:
 - templates → final output shape
 - protocol diagnoser → gap detection and open-the-sky signals
 - protocol auditor → quality checks before release
+- research file names are standardized as `pangu-writings.md`, `pangu-dialogues.md`, `pangu-expression.md`, `pangu-commentary.md`, `pangu-decisions.md`, and `pangu-timeline.md`
 
 ---
 

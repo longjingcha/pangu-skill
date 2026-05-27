@@ -310,12 +310,12 @@ description: |
 
 ## 调研来源
 
-- `references/research/01-writings.md`
-- `references/research/02-conversations.md`
-- `references/research/03-expression-dna.md`
-- `references/research/04-external-views.md`
-- `references/research/05-decisions.md`
-- `references/research/06-timeline.md`
+- `references/research/pangu-writings.md`
+- `references/research/pangu-dialogues.md`
+- `references/research/pangu-expression.md`
+- `references/research/pangu-commentary.md`
+- `references/research/pangu-decisions.md`
+- `references/research/pangu-timeline.md`
 
 ## 创建者归属
 
