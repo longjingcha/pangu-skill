@@ -202,7 +202,7 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 | 人物                 | 领域            | 独立仓库                                                                  | 一键安装（跨 runtime）                                |
 | ------------------ | ------------- | --------------------------------------------------------------------- | ---------------------------------------------- |
-| 🔥 **Paul Graham** | 创业/写作/产品/人生哲学 | [paul-graham-skill](https://github.com/longjingcha/paul-graham-skill) | `npx skills add longjingcha/paul-graham-skill` |
+| ⭐ **张雪峰** | 高考志愿/考研/职业规划 | [zhangxuefeng-skill](https://github.com/longjingcha/zhangxuefeng-skill) | `npx skills add longjingcha/zhangxuefeng-skill` |
 
 
 ### 主题Skill
@@ -216,6 +216,8 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 人物协议抽取一个人的思维方式；主题协议抽取一个领域的方法论。每个仓库都包含完整的调研数据和效果示例对话。
 
 想处理不在列表里的人或主题？安装盘古，说「构建一个XXX协议」就行。
+
+你也可以直接安装现成的人物协议，比如张雪峰：`npx skills add longjingcha/zhangxuefeng-skill`
 
 ---
 
