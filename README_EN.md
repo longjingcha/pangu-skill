@@ -59,19 +59,24 @@ Full methodology: `references/pangu-extraction-framework.md`.
 
 ```text
 pangu-skill/
-├── SKILL.md
-├── README.md
-├── README_EN.md
-├── references/
+├── SKILL.md                      # Pangu core
+├── README.md                     # Chinese overview and install guide
+├── README_EN.md                  # English version
+├── references/                   # methodology and templates
 │   ├── pangu-extraction-framework.md
-│   ├── pangu-skill-template.md
-│   └── pangu-sources-spec.md
-└── scripts/
-    ├── pangu_subtitle_fetcher.sh
-    ├── pangu_transcript_cleaner.py
-    ├── pangu_protocol_diagnoser.py
-    └── pangu_protocol_auditor.py
+│   └── pangu-skill-template.md
+└── examples/                     # built / in-progress protocol examples
+    ├── tech-and-semi/            # technology and semiconductors
+    ├── finance-and-payments/     # finance and payment networks
+    ├── industrial-and-manufacturing/ # industrial, aviation, and manufacturing
+    ├── agriculture/              # agriculture and supply chain
+    ├── politics-and-narrative/   # politics and transaction narratives
+    └── topic-protocols/          # topic protocols
 ```
+
+Every example repository includes full research notes, so you can trace how source material becomes a reusable protocol. Each example also keeps its own `README.md` and `SKILL.md` for direct installation and inspection.
+
+Think of `examples/` as a two-level catalog: the first level groups by domain, and the second level is the standalone person or topic protocol.
 
 ---
 

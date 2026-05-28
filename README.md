@@ -5,7 +5,7 @@
 <p align="center">
   <img src="assets/hero.gif" alt="pangu-skill Hero Animation" />
   <br/>
-  <sub>动画由 <a href="https://github.com/alchaincyf/huashu-design">huashu-design</a> skill 制作</sub>
+  <sub>动画由本地 render_hero制作</sub>
 </p>  
 
 > *「你想构建的下一个协议，何必是同事、人类」*
@@ -255,7 +255,7 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 人物协议抽取一个人的思维方式；主题协议抽取一个领域的方法论。每个仓库都包含完整的调研数据和效果示例对话。
 
-想处理不在列表里的人或主题？安装盘古，说「构建一个XXX协议」就行。
+想处理不在列表里的人或主题？安装盘古，说「构建一个 XXX 协议」就行。
 
 你也可以直接安装现成的人物协议，比如张雪峰：`npx skills add longjingcha/zhangxuefeng-skill`
 
