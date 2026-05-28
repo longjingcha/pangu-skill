@@ -28,6 +28,7 @@
 [同事.skill](https://github.com/titanwings/colleague-skill) 证明了“把一个人做成可调用对象”是可行的。  
 
 [女娲.skill](https://github.com/longjingcha/nuwa-skill) 证明了“女娲不复制人。它提取认知操作系统”
+
 盘古要做的更进一步：它不只处理某个人，也能处理一个专业领域的知识协议、路径与规则。  
 
 只需输入一个名字、一个领域，或者一个模糊目标，盘古就会自动完成生成流程，并在必要时触发开天能力。
@@ -57,15 +58,15 @@
 用户      ❯ 用张小龙的视角帮我想想：我的 App 想加一个‘签到’功能，该不该做？
 
 张小龙     ❯ 如果你的 App 不是高频核心场景，签到 功能大概率不该做。
-这个“签到”到底是在帮用户完成什么任务？
+            这个“签到”到底是在帮用户完成什么任务？
 
-如果答案只是：
+            如果答案只是：
 
-提升活跃
-做留存数据
-给运营一个抓手
-让产品看起来“有互动”
-那它通常不是用户需求，而是团队需求。
+            提升活跃
+            做留存数据
+            给运营一个抓手
+            让产品看起来“有互动”
+            那它通常不是用户需求，而是团队需求。
 
 ```
 
@@ -135,9 +136,9 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 装好后，告诉 agent：
 
 ```
-> 构建一个保罗·格雷厄姆协议
+> 构建一个特朗普的协议
 > 造一个张小龙的视角Skill
-> 帮我做一个段永平的Skill
+> 帮我做一个罗永浩的Skill
 ```
 
 造完之后直接调用：
@@ -205,8 +206,8 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 | 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
 | --- | --- | --- | --- |
-| **埃隆·马斯克（Elon Musk）** | 特斯拉 / SpaceX / 工程边界 / 第一性原理 | [elon-musk-skill](https://github.com/longjingcha/elon-musk-skill) | `npx skills add longjingcha/elon-musk-skill` |
-| **蒂姆·库克（Tim Cook）** | 苹果 / 供应链 / 运营纪律 / 长期稳健增长 | [tim-cook-skill](https://github.com/longjingcha/tim-cook-skill) | `npx skills add longjingcha/tim-cook-skill` |
+| **🔥 埃隆·马斯克（Elon Musk）** | 特斯拉 / SpaceX / 工程边界 / 第一性原理 | [elon-musk-skill](https://github.com/longjingcha/elon-musk-skill) | `npx skills add longjingcha/elon-musk-skill` |
+| **🔥 蒂姆·库克（Tim Cook）** | 苹果 / 供应链 / 运营纪律 / 长期稳健增长 | [tim-cook-skill](https://github.com/longjingcha/tim-cook-skill) | `npx skills add longjingcha/tim-cook-skill` |
 | **黄仁勋（Jensen Huang）** | 英伟达 / 算力基础设施 / 平台战略 | [jensen-huang-skill](https://github.com/longjingcha/jensen-huang-skill) | `npx skills add longjingcha/jensen-huang-skill` |
 | **克里斯蒂亚诺·阿蒙（Cristiano Amon）** | 高通 / 通信平台 / 芯片生态 / 终端连接 | [cristiano-amon-skill](https://github.com/longjingcha/cristiano-amon-skill) | `npx skills add longjingcha/cristiano-amon-skill` |
 | **桑杰·梅赫罗特拉（Sanjay Mehrotra）** | 美光科技 / 存储基础设施 / 规模化制造 | [sanjay-mehrotra-skill](https://github.com/longjingcha/sanjay-mehrotra-skill) | `npx skills add longjingcha/sanjay-mehrotra-skill` |
@@ -218,7 +219,7 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 | 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
 | --- | --- | --- | --- |
-| **拉里·芬克（Larry Fink）** | BlackRock / 长期资本配置 / 受托责任 | [larry-fink-skill](https://github.com/longjingcha/larry-fink-skill) | `npx skills add longjingcha/larry-fink-skill` |
+| **🔥 拉里·芬克（Larry Fink）** | BlackRock / 长期资本配置 / 受托责任 | [larry-fink-skill](https://github.com/longjingcha/larry-fink-skill) | `npx skills add longjingcha/larry-fink-skill` |
 | **苏世民（Stephen Schwarzman）** | Blackstone / 另类资产 / 平台化扩张 | [stephen-schwarzman-skill](https://github.com/longjingcha/stephen-schwarzman-skill) | `npx skills add longjingcha/stephen-schwarzman-skill` |
 | **苏德巍（David Solomon）** | Goldman Sachs / 市场周期 / 机构客户 | [david-solomon-skill](https://github.com/longjingcha/david-solomon-skill) | `npx skills add longjingcha/david-solomon-skill` |
 | **简·弗雷泽（Jane Fraser）** | Citigroup / 全球网络 / 组织重构 | [jane-fraser-skill](https://github.com/longjingcha/jane-fraser-skill) | `npx skills add longjingcha/jane-fraser-skill` |
@@ -229,20 +230,20 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 | 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
 | --- | --- | --- | --- |
-| **凯利·奥特伯格（Kelly Ortberg）** | Boeing / 航空制造 / 质量治理 / 供应链恢复 | [kelly-ortberg-skill](https://github.com/longjingcha/kelly-ortberg-skill) | `npx skills add longjingcha/kelly-ortberg-skill` |
+| **🔥 凯利·奥特伯格（Kelly Ortberg）** | Boeing / 航空制造 / 质量治理 / 供应链恢复 | [kelly-ortberg-skill](https://github.com/longjingcha/kelly-ortberg-skill) | `npx skills add longjingcha/kelly-ortberg-skill` |
 | **拉里·卡尔普（Larry Culp）** | GE Aerospace / 运营修复 / 现金流纪律 | [larry-culp-skill](https://github.com/longjingcha/larry-culp-skill) | `npx skills add longjingcha/larry-culp-skill` |
 
 ### 传统农业领域（1位）
 
 | 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
 | --- | --- | --- | --- |
-| **布莱恩·赛克斯（Brian Sikes）** | Cargill / 供应链韧性 / 粮食安全 / 全球农业基础设施 | [brian-sikes-skill](https://github.com/longjingcha/brian-sikes-skill) | `npx skills add longjingcha/brian-sikes-skill` |
+| **🔥 布莱恩·赛克斯（Brian Sikes）** | Cargill / 供应链韧性 / 粮食安全 / 全球农业基础设施 | [brian-sikes-skill](https://github.com/longjingcha/brian-sikes-skill) | `npx skills add longjingcha/brian-sikes-skill` |
 
 ### 政商与交易叙事（1位）
 
 | 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
 | --- | --- | --- | --- |
-| **唐纳德·特朗普（Donald Trump）** | 注意力 / 交易叙事 / 冲突管理 / 联盟重组 | [donald-trump-skill](https://github.com/longjingcha/donald-trump-skill) | `npx skills add longjingcha/donald-trump-skill` |
+| **🔥 唐纳德·特朗普（Donald Trump）** | 注意力 / 交易叙事 / 冲突管理 / 联盟重组 | [donald-trump-skill](https://github.com/longjingcha/donald-trump-skill) | `npx skills add longjingcha/donald-trump-skill` |
 
 ### 主题Skill
 
@@ -320,16 +321,24 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 ## 仓库结构
 
+
 ```
 pangu-skill/
 ├── SKILL.md                      # 盘古本体
-├── references/
-│   ├── pangu-extraction-framework.md   # 提炼方法论（想深入了解看这个）
-│   └── pangu-skill-template.md         # 生成Skill的模板
-└── examples/                          # 正在构建
-    ├── steve-jobs-perspective/        # ⭐ 乔布斯（含实战对话记录）
-    ├── paul-graham-perspective/       # Paul Graham
+├── README.md                     # 中文介绍与安装说明
+├── README_EN.md                  # English version
+├── references/                   # 提炼方法论与模板
+│   ├── pangu-extraction-framework.md
+│   └── pangu-skill-template.md
+└── examples/                     # 已构建/正在构建的示例协议
+    ├── tech-and-semi/            # 科技与半导体人物协议
+    ├── finance-and-payments/     # 金融与支付网络协议
+    ├── industrial-and-manufacturing/ # 工业、航空与制造协议
+    ├── agriculture/              # 传统农业与供应链协议
+    ├── politics-and-narrative/   # 政商与交易叙事协议
+    └── topic-protocols/          # 主题协议
 ```
+
 
 调研过程全透明。每个example都包含完整的调研文件，你可以看到信息怎么被收集、筛选、变成心智模型。乔布斯的示例还附带了一段完整的实战对话记录（聊AI硬件、OpenAI vs Anthropic、Apple破局），展示Skill在多轮深度对话中的表现。
 
@@ -341,7 +350,9 @@ pangu-skill/
 
 [同事.skill](https://github.com/titanwings/colleague-skill) 最近在GitHub爆火——把离职同事构建成 AI Skill，几天破5000星。它证明了一件事：把一个人做成可调用对象是完全可行的。
 
-女娲的贡献，是把人物思维框架做成可用镜子；盘古的推进，是在此基础上把人物、领域和问题本身一起协议化。
+[女娲.skill](https://github.com/alchaincyf/nuwa-skill)的贡献，是把人物思维框架做成可用镜子；
+
+[盘古.skill](https://github.com/longjingcha/pangu-skill)的推进，是在此基础上把人物、领域和问题本身一起协议化。
 
 盘古把两件事放在一起：既能构建人物协议，也能构建领域协议，还能在问题本身不对的时候先开天。前者给你认知风格，后者给你判断协议，而开天能力让系统先判断题对不对。
 
@@ -369,7 +380,7 @@ pangu-skill/
 
 [女娲.skill](https://github.com/longjingcha/nuwa-skill) 负责提炼认知框架。
 
-盘古负责把认知框架、领域判断和问题重构一起做成协议。
+[盘古.skill](https://github.com/longjingcha/pangu-skill)负责把认知框架、领域判断和问题重构一起做成协议。
 
 **盘古（Pangu）**，中国神话里开天辟地的巨人。这里的泥土是公开信息，造出来的不是人，是一套能不断开天的协议系统。
 
