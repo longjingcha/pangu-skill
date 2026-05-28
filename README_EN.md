@@ -75,11 +75,74 @@ pangu-skill/
 
 ---
 
+## Built protocols
+
+Pangu currently ships with 18 person protocols + 1 domain protocol. Each one is a standalone, installable Skill built on the Agent Skills protocol and compatible with runtimes like Claude Code, Codex, Cursor, OpenClaw, and Hermes.
+
+What Pangu really provides is not just a list, but a continuously evolving protocol production line: take a question, rewrite it if needed, extract structure, validate boundaries, and then produce a judgment.
+
+### Technology and semiconductors (8)
+
+| Person | Domain | Repository | One-line install |
+| --- | --- | --- | --- |
+| **Elon Musk** | Tesla / SpaceX / engineering constraints / first principles | [elon-musk-skill](https://github.com/longjingcha/elon-musk-skill) | `npx skills add longjingcha/elon-musk-skill` |
+| **Tim Cook** | Apple / supply chain / operational discipline / durable growth | [tim-cook-skill](https://github.com/longjingcha/tim-cook-skill) | `npx skills add longjingcha/tim-cook-skill` |
+| **Jensen Huang** | NVIDIA / compute infrastructure / platform strategy | [jensen-huang-skill](https://github.com/longjingcha/jensen-huang-skill) | `npx skills add longjingcha/jensen-huang-skill` |
+| **Cristiano Amon** | Qualcomm / communications platforms / chip ecosystem / device connectivity | [cristiano-amon-skill](https://github.com/longjingcha/cristiano-amon-skill) | `npx skills add longjingcha/cristiano-amon-skill` |
+| **Sanjay Mehrotra** | Micron / storage infrastructure / scaled manufacturing | [sanjay-mehrotra-skill](https://github.com/longjingcha/sanjay-mehrotra-skill) | `npx skills add longjingcha/sanjay-mehrotra-skill` |
+| **Jacob Thaysen** | Illumina / genome sequencing / scientific tooling platforms | [jacob-thaysen-skill](https://github.com/longjingcha/jacob-thaysen-skill) | `npx skills add longjingcha/jacob-thaysen-skill` |
+| **Jim Anderson** | Coherent / optics and photonics / high-end photonics infrastructure | [jim-anderson-skill](https://github.com/longjingcha/jim-anderson-skill) | `npx skills add longjingcha/jim-anderson-skill` |
+| **Dina Powell McCormick** | Meta / global affairs / public-private bridge building | [dina-powell-mccormick-skill](https://github.com/longjingcha/dina-powell-mccormick-skill) | `npx skills add longjingcha/dina-powell-mccormick-skill` |
+
+### Finance and payment networks (6)
+
+| Person | Domain | Repository | One-line install |
+| --- | --- | --- | --- |
+| **Larry Fink** | BlackRock / long-term capital allocation / fiduciary duty | [larry-fink-skill](https://github.com/longjingcha/larry-fink-skill) | `npx skills add longjingcha/larry-fink-skill` |
+| **Stephen Schwarzman** | Blackstone / alternative assets / platform expansion | [stephen-schwarzman-skill](https://github.com/longjingcha/stephen-schwarzman-skill) | `npx skills add longjingcha/stephen-schwarzman-skill` |
+| **David Solomon** | Goldman Sachs / market cycles / institutional clients | [david-solomon-skill](https://github.com/longjingcha/david-solomon-skill) | `npx skills add longjingcha/david-solomon-skill` |
+| **Jane Fraser** | Citigroup / global networks / organizational restructuring | [jane-fraser-skill](https://github.com/longjingcha/jane-fraser-skill) | `npx skills add longjingcha/jane-fraser-skill` |
+| **Michael Miebach** | Mastercard / payments platform / trust and security | [michael-miebach-skill](https://github.com/longjingcha/michael-miebach-skill) | `npx skills add longjingcha/michael-miebach-skill` |
+| **Ryan McInerney** | Visa / global payments network / cross-border transactions | [ryan-mcinerney-skill](https://github.com/longjingcha/ryan-mcinerney-skill) | `npx skills add longjingcha/ryan-mcinerney-skill` |
+
+### Industrial, aviation, and manufacturing (2)
+
+| Person | Domain | Repository | One-line install |
+| --- | --- | --- | --- |
+| **Kelly Ortberg** | Boeing / aircraft manufacturing / quality governance / supply-chain recovery | [kelly-ortberg-skill](https://github.com/longjingcha/kelly-ortberg-skill) | `npx skills add longjingcha/kelly-ortberg-skill` |
+| **Larry Culp** | GE Aerospace / operational turnaround / cash-flow discipline | [larry-culp-skill](https://github.com/longjingcha/larry-culp-skill) | `npx skills add longjingcha/larry-culp-skill` |
+
+### Agriculture (1)
+
+| Person | Domain | Repository | One-line install |
+| --- | --- | --- | --- |
+| **Brian Sikes** | Cargill / supply-chain resilience / food security / global agriculture infrastructure | [brian-sikes-skill](https://github.com/longjingcha/brian-sikes-skill) | `npx skills add longjingcha/brian-sikes-skill` |
+
+### Politics and transaction narratives (1)
+
+| Person | Domain | Repository | One-line install |
+| --- | --- | --- | --- |
+| **Donald Trump** | attention / transaction narrative / conflict management / coalition reshaping | [donald-trump-skill](https://github.com/longjingcha/donald-trump-skill) | `npx skills add longjingcha/donald-trump-skill` |
+
+### Domain protocol
+
+| Topic | Domain | Repository | One-line install |
+| --- | --- | --- | --- |
+| **X Mentor** | X/Twitter growth operations | [x-mentor-skill](https://github.com/longjingcha/x-mentor-skill) | `npx skills add longjingcha/x-mentor-skill` |
+
+Person protocols extract how a person thinks. Domain protocols extract how a field works. Each repository includes full research notes and example dialogues.
+
+Need a person or domain that is not on the list? Install Pangu and say: “Build an XXX protocol.”
+
+You can also install an existing protocol directly, for example Tim Cook: `npx skills add longjingcha/tim-cook-skill`
+
+---
+
 ## What Pangu provides
 
 Pangu provides a full protocol production chain, not just a one-off answer.
 
-### 1. Person Protocol
+### 1. Person protocol
 For public figures, founders, creators, and thinkers.
 
 It captures:
@@ -89,7 +152,7 @@ It captures:
 - values and anti-patterns
 - honesty boundaries
 
-### 2. Domain Protocol
+### 2. Domain protocol
 For fields, methodologies, themes, and frameworks.
 
 It captures:
@@ -113,20 +176,6 @@ When the question itself is broken, Pangu rewrites it before trying to answer.
 
 ### 5. End-to-end input pipeline
 From subtitles and transcripts to source specs, extraction frameworks, templates, and auditing, Pangu is a system for continuously producing protocols.
-
----
-
-## Source pipeline
-
-Pangu treats sources as a traceable pipeline:
-- subtitle fetcher → raw subtitles + metadata
-- transcript cleaner → clean transcript + metadata
-- source specification → storage and naming rules
-- extraction framework → protocol extraction standard
-- templates → final output shape
-- protocol diagnoser → gap detection and open-the-sky signals
-- protocol auditor → quality checks before release
-- research file names are standardized as `pangu-writings.md`, `pangu-dialogues.md`, `pangu-expression.md`, `pangu-commentary.md`, `pangu-decisions.md`, and `pangu-timeline.md`
 
 ---
 

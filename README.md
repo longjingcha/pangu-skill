@@ -197,17 +197,52 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 ## 已构建人物
 
-盘古已构建了13位人物 + 1个主题协议。每个都是独立的、可直接安装使用的Skill，全部基于 Agent Skills 协议，可在 Claude Code / Codex / Cursor / OpenClaw / Hermes 等 runtime 通用。
+盘古已构建了 18 位人物 + 1 个主题协议。每个都是独立的、可直接安装使用的 Skill，全部基于 Agent Skills 协议，可在 Claude Code / Codex / Cursor / OpenClaw / Hermes 等 runtime 通用。
 
 但盘古真正提供的，不只是列表，而是一套可以持续演化的认知生产线：输入问题、重写问题、提炼结构、验证边界、再输出判断。
 
-### 人物Skill
+### 科技与半导体领域（8位）
 
+| 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
+| --- | --- | --- | --- |
+| **埃隆·马斯克（Elon Musk）** | 特斯拉 / SpaceX / 工程边界 / 第一性原理 | [elon-musk-skill](https://github.com/longjingcha/elon-musk-skill) | `npx skills add longjingcha/elon-musk-skill` |
+| **蒂姆·库克（Tim Cook）** | 苹果 / 供应链 / 运营纪律 / 长期稳健增长 | [tim-cook-skill](https://github.com/longjingcha/tim-cook-skill) | `npx skills add longjingcha/tim-cook-skill` |
+| **黄仁勋（Jensen Huang）** | 英伟达 / 算力基础设施 / 平台战略 | [jensen-huang-skill](https://github.com/longjingcha/jensen-huang-skill) | `npx skills add longjingcha/jensen-huang-skill` |
+| **克里斯蒂亚诺·阿蒙（Cristiano Amon）** | 高通 / 通信平台 / 芯片生态 / 终端连接 | [cristiano-amon-skill](https://github.com/longjingcha/cristiano-amon-skill) | `npx skills add longjingcha/cristiano-amon-skill` |
+| **桑杰·梅赫罗特拉（Sanjay Mehrotra）** | 美光科技 / 存储基础设施 / 规模化制造 | [sanjay-mehrotra-skill](https://github.com/longjingcha/sanjay-mehrotra-skill) | `npx skills add longjingcha/sanjay-mehrotra-skill` |
+| **雅各布·泰森（Jacob Thaysen）** | 因美纳 / 基因测序 / 科学工具平台 | [jacob-thaysen-skill](https://github.com/longjingcha/jacob-thaysen-skill) | `npx skills add longjingcha/jacob-thaysen-skill` |
+| **吉姆·安德森（Jim Anderson）** | Coherent / 光学与光子技术 / 高端光电基础设施 | [jim-anderson-skill](https://github.com/longjingcha/jim-anderson-skill) | `npx skills add longjingcha/jim-anderson-skill` |
+| **迪娜·鲍威尔·麦考密克（Dina Powell McCormick）** | Meta / 全球事务 / 政商桥梁 | [dina-powell-mccormick-skill](https://github.com/longjingcha/dina-powell-mccormick-skill) | `npx skills add longjingcha/dina-powell-mccormick-skill` |
 
-| 人物                 | 领域            | 独立仓库                                                                  | 一键安装（跨 runtime）                                |
-| ------------------ | ------------- | --------------------------------------------------------------------- | ---------------------------------------------- |
-| ⭐ **张雪峰** | 高考志愿/考研/职业规划 | [zhangxuefeng-skill](https://github.com/longjingcha/zhangxuefeng-skill) | `npx skills add longjingcha/zhangxuefeng-skill` |
+### 金融与支付网络（6位）
 
+| 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
+| --- | --- | --- | --- |
+| **拉里·芬克（Larry Fink）** | BlackRock / 长期资本配置 / 受托责任 | [larry-fink-skill](https://github.com/longjingcha/larry-fink-skill) | `npx skills add longjingcha/larry-fink-skill` |
+| **苏世民（Stephen Schwarzman）** | Blackstone / 另类资产 / 平台化扩张 | [stephen-schwarzman-skill](https://github.com/longjingcha/stephen-schwarzman-skill) | `npx skills add longjingcha/stephen-schwarzman-skill` |
+| **苏德巍（David Solomon）** | Goldman Sachs / 市场周期 / 机构客户 | [david-solomon-skill](https://github.com/longjingcha/david-solomon-skill) | `npx skills add longjingcha/david-solomon-skill` |
+| **简·弗雷泽（Jane Fraser）** | Citigroup / 全球网络 / 组织重构 | [jane-fraser-skill](https://github.com/longjingcha/jane-fraser-skill) | `npx skills add longjingcha/jane-fraser-skill` |
+| **迈克尔·米巴赫（Michael Miebach）** | Mastercard / 支付平台 / 信任安全 | [michael-miebach-skill](https://github.com/longjingcha/michael-miebach-skill) | `npx skills add longjingcha/michael-miebach-skill` |
+| **瑞安·麦克纳尼（Ryan McInerney）** | Visa / 全球支付网络 / 跨境交易 | [ryan-mcinerney-skill](https://github.com/longjingcha/ryan-mcinerney-skill) | `npx skills add longjingcha/ryan-mcinerney-skill` |
+
+### 工业航空与制造业（2位）
+
+| 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
+| --- | --- | --- | --- |
+| **凯利·奥特伯格（Kelly Ortberg）** | Boeing / 航空制造 / 质量治理 / 供应链恢复 | [kelly-ortberg-skill](https://github.com/longjingcha/kelly-ortberg-skill) | `npx skills add longjingcha/kelly-ortberg-skill` |
+| **拉里·卡尔普（Larry Culp）** | GE Aerospace / 运营修复 / 现金流纪律 | [larry-culp-skill](https://github.com/longjingcha/larry-culp-skill) | `npx skills add longjingcha/larry-culp-skill` |
+
+### 传统农业领域（1位）
+
+| 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
+| --- | --- | --- | --- |
+| **布莱恩·赛克斯（Brian Sikes）** | Cargill / 供应链韧性 / 粮食安全 / 全球农业基础设施 | [brian-sikes-skill](https://github.com/longjingcha/brian-sikes-skill) | `npx skills add longjingcha/brian-sikes-skill` |
+
+### 政商与交易叙事（1位）
+
+| 人物 | 领域 | 独立仓库 | 一键安装（跨 runtime） |
+| --- | --- | --- | --- |
+| **唐纳德·特朗普（Donald Trump）** | 注意力 / 交易叙事 / 冲突管理 / 联盟重组 | [donald-trump-skill](https://github.com/longjingcha/donald-trump-skill) | `npx skills add longjingcha/donald-trump-skill` |
 
 ### 主题Skill
 
