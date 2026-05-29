@@ -250,7 +250,7 @@ git clone https://github.com/longjingcha/pangu-skill <上面对应的路径>
 
 | 主题      | 领域            | 独立仓库                                                            | 一键安装（跨 runtime）                             |
 | ------- | ------------- | --------------------------------------------------------------- | ------------------------------------------- |
-| **小红书协议** | 小红书运营全栈 | [x-mentor-skill](https://github.com/longjingcha/xiaohongshu-ops-skill) | `npx skills add longjingcha/xiaohongshu-ops-skill` |
+| **小红书协议** | 小红书运营全栈 | [xiaohongshu-ops-skill](https://github.com/longjingcha/xiaohongshu-ops-skill) | `npx skills add longjingcha/xiaohongshu-ops-skill` |
 
 
 人物协议抽取一个人的思维方式；主题协议抽取一个领域的方法论。每个仓库都包含完整的调研数据和效果示例对话。
